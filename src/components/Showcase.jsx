@@ -220,8 +220,11 @@ export default function Showcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: idx * 0.08 }}
-            className={`relative group overflow-hidden rounded-3xl border border-neutral-800 p-6 flex flex-col justify-between ${project.colSpan} ${project.rowSpan} ${project.previewBg}`}
+            className={`relative group overflow-hidden rounded-3xl border border-neutral-800 p-6 flex flex-col justify-between hover:border-neutral-600 transition-colors cursor-pointer ${project.colSpan} ${project.rowSpan} ${project.previewBg}`}
           >
+            {/* Full card clickable overlay */}
+            <a href={project.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-40" aria-label={`View ${project.title} live project`} />
+
             {/* Glow accent */}
             <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-30 pointer-events-none`} />
 
